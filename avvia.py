@@ -173,6 +173,8 @@ HTML = r"""<!DOCTYPE html>
                     const awayScore = (scoreDivs[1]?.textContent || '').trim();
                     const hasScore = /\d/.test(homeScore) && /\d/.test(awayScore);
                     if (names.length < 2 || isBye(names[0]) || isBye(names[1])) return;
+                    // Mostra solo partite che coinvolgono Academy Soccer Ercolano
+                    if (!isErcolano(names[0]) && !isErcolano(names[1])) return;
                     const match = {
                         id: idx,
                         home: names[0],
